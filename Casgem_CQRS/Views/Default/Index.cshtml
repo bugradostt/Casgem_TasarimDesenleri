@@ -1,0 +1,59 @@
+﻿
+@model List<Casgem_CQRS.CQRSPattern.Results.GetProductQueryResult>
+
+@{
+    Layout = null;
+}
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+
+<div class="container  mt-5">
+    <a class="btn btn-success" href="/Defalut/AddProduct/">Ekle</a>
+    <br />
+    <br />
+    <table class="table table-striped">
+        <tr>
+            <th>#</th>
+            <th>Ürün Adı</th>
+            <th>Marka</th>
+            <th>Kategori</th>
+            <th>Stok</th>
+            <th>Fiyat</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @{
+            int a = 1;
+        }
+        @foreach (var i in Model)
+        {
+            <tr>
+                <th>@a</th>
+                <td>@i.Name</td>
+                <td>@i.Brand</td>
+                <td>@i.Category</td>
+                <td>@i.Stock</td>
+                <td>@i.Price ₺</td>
+                <td>
+                    <a class="btn btn-danger" href="/Default/DeleteProduct/@i.ProductId">Sil</a>
+                </td>
+                <td>
+                    <a class="btn btn-success" href="/Default/EditProduct/@i.ProductId">Güncelle</a>
+
+                </td>
+                <td>
+                    <a class="btn btn-secondary" href="/Default/GetProduct/@i.ProductId">Getir</a>
+
+                </td>
+            </tr>
+
+            a++;
+            
+        }
+
+    </table>
+</div>

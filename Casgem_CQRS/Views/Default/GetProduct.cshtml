@@ -1,0 +1,38 @@
+﻿@model Casgem_CQRS.CQRSPattern.Results.GetProductByIdQueryResult
+
+@{
+    Layout = null;
+}
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+
+<div class="container  mt-5">
+
+    <input type="hidden" class="form-control" asp-for="ProductId" placeholder="Ürün adı" />
+
+    <form method="post">
+        <div class="mb-3">
+            <label>Ürün Adı</label>
+            <input type="text" class="form-control" asp-for="Name" placeholder="Ürün adı" />
+        </div>
+
+        <div class="mb-3">
+            <label>Marka</label>
+            <input type="text" class="form-control" asp-for="Brand" placeholder="Marka adı" />
+        </div>
+
+        <a class="btn btn-danger" href="/Default/Index/">Geri</a>
+
+
+      
+
+
+
+    </form>
+
+
+
+
+</div>
